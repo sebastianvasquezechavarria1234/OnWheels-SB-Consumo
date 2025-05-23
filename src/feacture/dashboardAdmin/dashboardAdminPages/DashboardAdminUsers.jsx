@@ -72,7 +72,7 @@ export const DashboardAdminUsers = () => {
 								className="py-[20px] border-b border-black/20 flex items-center"
 							>
 								<p className="w-[5%]">{element.id}</p>
-								<div className="w-[20%] flex gap-[10px] items-center">
+								<div className="w-[20%] flex gap-[15px] items-center">
 									{/* Avatar */}
 									<span className={`relative w-[55px] h-[55px] ${color.fondo} ${color.texto} rounded-full flex justify-center items-center font-secundaria text-[2rem]`}>
 										<h5 className="font-secundaria">
