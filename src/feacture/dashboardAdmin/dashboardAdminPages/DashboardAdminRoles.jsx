@@ -3,7 +3,7 @@ import { DashboardAdminLayout } from "../dashboardAdminLayout/dashboardAdminLayo
 import { BadgeCheck } from "lucide-react";
 import axios from "axios";
 
-export const DashboardAdminUsers = () => {
+export const DashboardAdminRoles = () => {
 
      const [usuarios, setUsuarios] = useState([])
 
@@ -27,7 +27,7 @@ export const DashboardAdminUsers = () => {
     return (
         <DashboardAdminLayout>
             <section className="relative w-[100%] bg-[var(--gray-bg-body)] side_bar">
-                <h1 className="sticky top-0 bg-[var(--gray-bg-body)] p-[30px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">Usuarios</h1>
+                <h1 className="sticky top-0 bg-[var(--gray-bg-body)] p-[30px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">Roles</h1>
 
                 {/* Tabla */}
 

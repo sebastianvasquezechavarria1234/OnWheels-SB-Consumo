@@ -13,6 +13,8 @@
   --gray-text: #71717ACC;
   --gray-dark: #333;
   --blue-dark: hsl(235.26deg 40.43% 18.43%);
+  --red: hsl(342.19deg 61.26% 49.61%);
+  --red-light: hsl(342, 100%, 98%);
   --shadow: 2px 10px 20px rgba(0, 0, 0, 0.063);
 }
 
@@ -47,6 +49,17 @@ a, p{
 p{
   color: var(--gray-text);
 }
+
+/* DASBOARD scroll */
+/* En tu CSS global */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 
 
 /* FONT */

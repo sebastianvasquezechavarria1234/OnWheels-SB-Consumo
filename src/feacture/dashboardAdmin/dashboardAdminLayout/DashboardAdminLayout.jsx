@@ -1,82 +1,81 @@
 import React from "react";
-import { Home, LayoutDashboard, Shield, Shirt, Users } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Home, Shield, Shirt, Users } from "lucide-react";
+import { BtnDefault } from "../../../assets/btn/BtnDefault";
+import { motion } from "framer-motion";
 
 export const DashboardAdminLayout = ({ children }) => {
-	return (
-		<>
-			<main className="w-full h-screen flex gap-[10px] p-[10px] bg-[var(--blue-light)]">
-				{/* SideBar */}
-				<nav className="w-[20%] p-[30px]">
-				<h1 className="mb-[20px]  border-b pb-[20px] border-black/30">
-					OnWheels SB
-				</h1>
-					<ul className="flex flex-col gap-[5px]">
-						<li>
-							{/* Enlace */}
-							<Link 
-								to=""
-								className="flex gap-[10px] items-center bg-transparent p-[5px] rounded-full">
-								{/* Icon */}
-								<span className="w-[55px] h-[55px] flex justify-center items-center rounded-full bg-gray-200 border border-black/5">
-									<Home
-										size={23} 
-										color="black" 
-										strokeWidth={1.2} />
-								</span>
-								Dashboard
-							</Link>
-						</li>						
-						<li>
-							{/* Enlace */}
-							<Link 
-								to=""
-								className="flex gap-[10px] items-center p-[3px] rounded-full">
-								{/* Icon */}
-								<span className="w-[55px] h-[55px] flex justify-center items-center rounded-full bg-[#333] border border-black/5">
-									<Users 
-										size={23} 
-										color="white" 
-										strokeWidth={1.5} />
-								</span>
-								Usuarios
-							</Link>
-						</li>
-						<li>
-							{/* Enlace */}
-							<Link 
-								to=""
-								className="flex gap-[10px] items-center bg-transparent p-[5px] rounded-full">
-								{/* Icon */}
-								<span className="w-[55px] h-[55px] flex justify-center items-center rounded-full bg-gray-200 border border-black/5">
-									<Shield
-										size={23} 
-										color="black" 
-										strokeWidth={1.5} />
-								</span>
-								Roles
-							</Link>
-						</li>
-						<li>
-							{/* Enlace */}
-							<Link 
-								to=""
-								className="flex gap-[10px] items-center bg-transparent p-[5px] rounded-full">
-								{/* Icon */}
-								<span className="w-[55px] h-[55px] flex justify-center items-center rounded-full bg-gray-200 border border-black/5">
-									<Shirt 
-										size={23} 
-										color="black" 
-										strokeWidth={1.5} />
-								</span>
-								Productos
-							</Link>
-						</li>
-					</ul>
+  return (
+    <main
+      className="w-full h-screen flex gap-[10px] overflow-x-hidden bg-white"
+      style={{ perspective: "1200px" }}
+    >
+      {/* Sidebar */}
+      <nav className="w-[20%] p-[30px] border-r border-black/20 bg-white z-10">
+        <h1 className="mb-[20px] border-b pb-[30px] border-black/20 font-secundaria">
+          Consumo Api
+        </h1>
+        <ul className="flex flex-col">
+          <li>
+            <BtnDefault to="" style="" title="Dashboard">
+              <Home size={23} strokeWidth={1.3} />
+            </BtnDefault>
+          </li>
+          <li>
+            <BtnDefault to="/usuarios" style="" title="Usuarios">
+              <Users size={23} strokeWidth={1.5} />
+            </BtnDefault>
+          </li>
+          <li>
+            <BtnDefault to="/roles" style="" title="Roles">
+              <Shield size={23} strokeWidth={1.5} />
+            </BtnDefault>
+          </li>
+          <li>
+            <BtnDefault to="/productos" style="" title="Productos">
+              <Shirt size={23} strokeWidth={1.5} />
+            </BtnDefault>
+          </li>
+        </ul>
+      </nav>
 
-				</nav>
-				{children}
-			</main>
-		</>
-	);
+      {/* Contenido animado con entrada y salida mejoradas */}
+      <motion.section
+        className="w-[80%] bg-white hide-scrollbar"
+        initial={{
+          opacity: 0,
+          scale: 0.3,
+          rotateX: -45,
+          rotateY: 10,
+          filter: "blur(20px)",
+          transformOrigin: "center center",
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+          rotateX: 0,
+          rotateY: 0,
+          filter: "blur(0px)",
+        }}
+        exit={{
+          opacity: 0,
+          scale: 0.6,
+          rotateX: 30,
+          rotateY: -20,
+          filter: "blur(25px)",
+        }}
+        transition={{
+          delay: 0.1,
+          duration: 1,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        style={{
+          height: "100%",
+          overflowY: "auto", // Scroll funcional
+          transformStyle: "preserve-3d",
+        }}
+      >
+        {children}
+      </motion.section>
+    </main>
+  );
 };
