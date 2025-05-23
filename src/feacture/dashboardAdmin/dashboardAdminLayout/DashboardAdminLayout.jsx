@@ -1,5 +1,5 @@
 import React from "react";
-import { Home, Shield, Shirt, Users } from "lucide-react";
+import { Home, CalendarDays, Shirt, Users } from "lucide-react";
 import { BtnDefault } from "../../../assets/btn/BtnDefault";
 import { motion } from "framer-motion";
 
@@ -27,12 +27,12 @@ export const DashboardAdminLayout = ({ children }) => {
           </li>
           <li>
             <BtnDefault to="/eventos" style="" title="Eventos">
-              <Shield size={23} strokeWidth={1.5} />
+              <CalendarDays size={23} strokeWidth={1.5} />
             </BtnDefault>
           </li>
           <li>
             <BtnDefault to="/productos" style="" title="Productos">
-              <CalendarDays  size={23} strokeWidth={1.5} />
+              <Shirt  size={23} strokeWidth={1.5} />
             </BtnDefault>
           </li>
         </ul>
