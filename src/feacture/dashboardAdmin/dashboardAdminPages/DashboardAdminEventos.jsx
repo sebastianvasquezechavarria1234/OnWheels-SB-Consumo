@@ -10,7 +10,7 @@ export const DashboardAdminEventos = () => {
     const getEventos = async () => {
         try {
             const response = await axios.get('http://localhost:3000/eventos');
-            console.log('eventos', response.data);
+            console.log(response.data.autos);
             setEventos(response.data)
         } catch (error) {
             console.error('Error al obtener Eventos:', error);
@@ -50,7 +50,7 @@ export const DashboardAdminEventos = () => {
                     {eventos.map((element) => (
                         <article key={element.id} className="py-[20px] border-b border-black/20 flex items-center">
                         <p className="w-[5%]">{element.id}</p>
-                        <img className="w-[20%]" src={element.ImgE}  />
+                        <img className="w-[150px] h-[150px]" src={element.ImgE}  />
                         <p className="w-[10%] underline italic">{element.Evento}</p>
                         <p className="w-[10%]">{element.Fecha}</p>
                         <p className="w-[10%]">{element.Lugar}</p>
