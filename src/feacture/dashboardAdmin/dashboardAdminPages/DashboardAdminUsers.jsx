@@ -98,9 +98,6 @@ export const DashboardAdminUsers = () => {
                                 >
                                     <Trash2 size={22} strokeWidth={1.3} />
                                 </span>
-
-
-
                             </div>
                         </article>
                     ))}
