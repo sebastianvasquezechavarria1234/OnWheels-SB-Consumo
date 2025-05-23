@@ -10,8 +10,10 @@ export const DashboardAdminEventos = () => {
     // Obtener todos los Eventos
     const getEventos = async () => {
         try {
+
             const response = await axios.get('https://apiautoscrud-1.onrender.com/eventos');
             console.log('eventos', response.data);
+
             setEventos(response.data)
         } catch (error) {
             console.error('Error al obtener Eventos:', error);
@@ -64,6 +66,16 @@ export const DashboardAdminEventos = () => {
                         <p className="w-[15%] line-clamp-1">{element.Dirección}</p>
                         <p className="w-[15%] line-clamp-1">{element.Patrocionadores}</p>
                         <p className="w-[7%] line-clamp-1">{element.Hora}</p>
+
+                        <p className="w-[5%]">{element.id}</p>
+                        <img className="w-[150px] h-[150px]" src={element.ImgE}  />
+                        <p className="w-[10%] underline italic">{element.Evento}</p>
+                        <p className="w-[10%]">{element.Fecha}</p>
+                        <p className="w-[10%]">{element.Lugar}</p>
+                        <p className="w-[10%]">{element.Dirección}</p>
+                        <p className="w-[10%]">{element.Patrocinadores}</p>
+                        <p className="w-[10%]">{element.Hora}</p>
+
                        <div className="w-[15%] flex gap-[10px] items-center">
                                 {/* Icon ver */}
                                 <span
