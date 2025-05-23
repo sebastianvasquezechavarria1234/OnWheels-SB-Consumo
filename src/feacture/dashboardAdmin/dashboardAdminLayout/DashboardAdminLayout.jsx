@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 export const DashboardAdminLayout = ({ children }) => {
   return (
     <main
-      className="w-full h-screen flex gap-[10px] overflow-x-hidden bg-white"
+      className="w-full h-screen flex gap-[10px] overflow-x-hidden"
       style={{ perspective: "1200px" }}
     >
       {/* Sidebar */}
-      <nav className="w-[20%] p-[30px] border-r border-black/20 bg-white z-10">
+      <nav className="w-[20%] p-[30px] border-r border-black/20  z-10">
         <h1 className="mb-[20px] border-b pb-[30px] border-black/20 font-secundaria">
           Consumo Api
         </h1>
@@ -40,7 +40,7 @@ export const DashboardAdminLayout = ({ children }) => {
 
       {/* Contenido animado con entrada y salida mejoradas */}
       <motion.section
-        className="w-[80%] bg-white hide-scrollbar"
+        className="w-[80%] hide-scrollbar"
         initial={{
           opacity: 0,
           scale: 0.3,
