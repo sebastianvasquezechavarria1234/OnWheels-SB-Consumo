@@ -51,7 +51,10 @@ export const DashboardAdminEventos = () => {
                     {eventos.map((element) => (
                         <article key={element.id} className="py-[20px] border-b border-black/20 flex items-center">
                         <p className="w-[5%]">{element.id}</p>
-                        <img className="w-[20%]" src={element.ImgE}  />
+                        <picture className="w-[15%] h-[100px] rounded-[20px] overflow-hidden">
+                            <img className="w-full h-full object-cover" src={element.ImgE}  />
+
+                        </picture>
                         <p className="w-[10%] underline italic">{element.Evento}</p>
                         <p className="w-[10%]">{element.Fecha}</p>
                         <p className="w-[10%]">{element.Lugar}</p>
