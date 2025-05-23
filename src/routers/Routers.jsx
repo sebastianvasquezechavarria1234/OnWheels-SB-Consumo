@@ -12,7 +12,7 @@ export const Routers = () => {
     <Routes location={location} key={location.pathname}>
        <Route path="/" element={<Home />} />
        <Route path="/usuarios" element={<DashboardAdminUsers />} />
-       <Route path="/roles" element={<DashboardAdminEventos />} />
+       <Route path="/eventos" element={<DashboardAdminEventos />} />
        <Route path="/productos" element={<DashboardAdminProductos />} />
     </Routes>
 
