@@ -3,18 +3,18 @@ import { DashboardAdminLayout } from "../dashboardAdminLayout/dashboardAdminLayo
 import { BadgeCheck } from "lucide-react";
 import axios from "axios";
 
-export const DashboardAdminRoles = () => {
+export const DashboardAdminEventos = () => {
 
-     const [usuarios, setUsuarios] = useState([])
+     const [usuarios, setEventos] = useState([])
 
-    // Obtener todos los usuarios
+    // Obtener todos los Eventos
     const getUsuarios = async () => {
         try {
-            const response = await axios.get('https://apiautoscrud-1.onrender.com/usuarios');
-            console.log('Usuarios:', response.data);
+            const response = await axios.get('http://localhost:3000/eventos');
+            console.log('Eventos:', response.data);
             setUsuarios(response.data)
         } catch (error) {
-            console.error('Error al obtener usuarios:', error);
+            console.error('Error al obtener Eventos:', error);
         }
     };
 
@@ -33,11 +33,15 @@ export const DashboardAdminRoles = () => {
 
                 <div className="p-[30px]">
                     <article className=" mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
+
                         <p className="w-[5%]">ID</p>
-                        <p className="w-[20%]">Nombre</p>
-                        <p className="w-[30%]">Correo electonico</p>
-                        <p className="w-[10%]">Telefono</p>
-                        <p className="w-[20%]">Rol</p>
+                        <p className="w-[5%]">Imagen</p>
+                        <p className="w-[20%]">Evento</p>
+                        <p className="w-[30%]">Fecha</p>
+                        <p className="w-[10%]">Lugar</p>
+                        <p className="w-[20%]">Direccion</p>
+                        <p className="w-[5%]">Patrocinadores</p>
+                        <p className="w-[5%]">Hora</p>
                         <p className="w-[15%]">Acciones</p>
                     </article>
 
@@ -47,18 +51,16 @@ export const DashboardAdminRoles = () => {
                         <article className=" py-[20px] border-b border-black/20 flex items-center">
                             <p className="w-[5%]">{element.id}</p>
                             <div className="w-[20%]">
-                                <p className="font-bold text-black/80! italic">{element.nombre}</p>
-                                <p>{element.apellidos}</p>
+                                <img >{element.ImgE}</img>
+                                
 
                             </div>
-                            <p className="w-[30%] underline italic">{element.email}</p>
-                            <p className="w-[10%]">{element.telefono}</p>
-                            <div className="w-[20%]">
-                                <p className="inline-flex gap-[5px] text-blue-700! bg-blue-100 px-[8px] rounded-full">
-
-                                    {element.rol}
-                                </p>
-                            </div>
+                            <p className="w-[30%] underline italic">{element.Evento}</p>
+                            <p className="w-[10%]">{element.Fecha}</p>
+                            <p className="w-[10%]">{element.Lugar}</p>
+                            <p className="w-[10%]">{element.Dirección}</p>
+                            <p className="w-[10%]">{element.Patrocinadores}</p>
+                            <p className="w-[10%]">{element.Hora}</p>
                             <p className="w-[15%]">Acciones</p>
                         </article>
                     ))}

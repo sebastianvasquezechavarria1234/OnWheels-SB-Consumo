@@ -26,13 +26,13 @@ export const DashboardAdminLayout = ({ children }) => {
             </BtnDefault>
           </li>
           <li>
-            <BtnDefault to="/roles" style="" title="Roles">
+            <BtnDefault to="/eventos" style="" title="Eventos">
               <Shield size={23} strokeWidth={1.5} />
             </BtnDefault>
           </li>
           <li>
             <BtnDefault to="/productos" style="" title="Productos">
-              <Shirt size={23} strokeWidth={1.5} />
+              <CalendarDays  size={23} strokeWidth={1.5} />
             </BtnDefault>
           </li>
         </ul>
