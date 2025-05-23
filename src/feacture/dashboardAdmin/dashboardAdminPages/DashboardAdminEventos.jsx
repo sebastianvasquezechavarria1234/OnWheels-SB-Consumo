@@ -10,13 +10,12 @@ export const DashboardAdminEventos = () => {
     // Obtener todos los Eventos
     const getEventos = async () => {
         try {
-<<<<<<< HEAD
+
             const response = await axios.get('http://localhost:3000/eventos');
             console.log(response.data.autos);
-=======
+
             const response = await axios.get('https://apiautoscrud-1.onrender.com/eventos');
             console.log('eventos', response.data);
->>>>>>> ed8302cfa6ec535a6c4b22f3b1058e000b8a9676
             setEventos(response.data)
         } catch (error) {
             console.error('Error al obtener Eventos:', error);
