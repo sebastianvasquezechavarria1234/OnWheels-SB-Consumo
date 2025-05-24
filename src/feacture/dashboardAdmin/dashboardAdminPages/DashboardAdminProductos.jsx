@@ -27,7 +27,7 @@ export const DashboardAdminProductos = () => {
     return (
         <DashboardAdminLayout>
             <section className="relative w-[100%] bg-[var(--gray-bg-body)] side_bar">
-                <h1 className="sticky top-0 bg-[var(--gray-bg-body)] p-[30px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">Productos</h1>
+                <h1 className="sticky top-0 bg-[var(--gray-bg-body)] p-[30px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">Productos Nuevo del cambio</h1>
 
                 {/* Tabla */}
 
