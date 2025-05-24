@@ -23,16 +23,6 @@ export const DashboardAdminUsers = () => {
 		getUsuarios();
 	}, []);
 
-	const handleVerClick = (usuario) => {
-		setUsuarioSeleccionado(usuario);
-		setModalOpen(true);
-	};
-
-	const handleCerrarModal = () => {
-		setModalOpen(false);
-		setUsuarioSeleccionado(null);
-	};
-
 	return (
 		<DashboardAdminLayout>
 			<section className="relative w-[100%] bg-[var(--gray-bg-body)] side_bar">
@@ -42,7 +32,7 @@ export const DashboardAdminUsers = () => {
 
 				<div className="p-[30px]">
 					<article className="mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
-						<p className="w-[5%]">ID</p>
+						<p className="w-[3%]">ID</p>
 						<p className="w-[20%]">Nombre</p>
 						<p className="w-[30%]">Correo electonico</p>
 						<p className="w-[10%]">Telefono</p>
@@ -71,7 +61,7 @@ export const DashboardAdminUsers = () => {
 								key={element.id}
 								className="py-[20px] border-b border-black/20 flex items-center"
 							>
-								<p className="w-[5%]">{element.id}</p>
+								<p className="w-[3%]">{element.id}</p>
 								<div className="w-[20%] flex gap-[15px] items-center">
 									{/* Avatar */}
 									<span className={`relative w-[55px] h-[55px] ${color.fondo} ${color.texto} rounded-full flex justify-center items-center font-secundaria text-[2rem]`}>

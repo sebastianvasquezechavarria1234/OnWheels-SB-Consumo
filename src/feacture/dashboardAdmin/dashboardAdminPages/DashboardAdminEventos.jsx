@@ -11,11 +11,17 @@ export const DashboardAdminEventos = () => {
     const getEventos = async () => {
         try {
 
+<<<<<<< HEAD
             const response = await axios.get('http://localhost:3000/eventos');
             console.log(response.data.autos);
 
             const response = await axios.get('https://apiautoscrud-1.onrender.com/eventos');
             console.log('eventos', response.data);
+=======
+            const response = await axios.get('https://apiautoscrud-1.onrender.com/eventos');
+            console.log('eventos', response.data);
+
+>>>>>>> 951594b6f998a229d48143262f5f3f9bfd4628c7
             setEventos(response.data)
         } catch (error) {
             console.error('Error al obtener Eventos:', error);
@@ -38,14 +44,12 @@ export const DashboardAdminEventos = () => {
                 <div className="p-[30px]">
                     <article className=" mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
 
-                        <p className="w-[5%]">ID</p>
-                        <p className="w-[15%]">Imagen</p>
-                        <p className="w-[15%]">Evento</p>
-                        <p className="w-[10%]">Fecha</p>
-                        <p className="w-[10%]">Lugar</p>
-                        <p className="w-[10%]">Direccion</p>
-                        <p className="w-[10%]">Patrocinadores</p>
-                        <p className="w-[5%]">Hora</p>
+                        <p className="w-[3%]">ID</p>
+                        <p className="w-[30%]">Evento</p>
+                        <p className="w-[15%]">Lugar</p>
+                        <p className="w-[15%]">Direccion</p>
+                        <p className="w-[15%]">Patrocinadores</p>
+                        <p className="w-[7%]">Hora</p>
                         <p className="w-[15%]">Acciones</p>
                     </article>
 
@@ -54,6 +58,23 @@ export const DashboardAdminEventos = () => {
 
                     {eventos.map((element) => (
                         <article key={element.id} className="py-[20px] border-b border-black/20 flex items-center">
+                        <p className="w-[3%]">{element.id}</p>
+                        {/* Contenedor avatar y title */}
+                        <div className="w-[30%] flex items-center gap-[15px]">
+                            <picture className=" w-[55px] h-[55px] rounded-full bg-red-600 overflow-hidden">
+                                <img className="w-full h-full object-cover object-center" src={element.ImgE}  />
+                            </picture>
+                            <div className="flex flex-col">
+                                <p className="font-semibold italic line-clamp-1">{element.Evento}</p>
+                                <p className="line-clamp-1">{element.Fecha}</p>
+
+                            </div>
+                        </div>
+                        <p className="w-[15%] line-clamp-1">{element.Lugar}</p>
+                        <p className="w-[15%] line-clamp-1">{element.Dirección}</p>
+                        <p className="w-[15%] line-clamp-1">{element.Patrocionadores}</p>
+                        <p className="w-[7%] line-clamp-1">{element.Hora}</p>
+
                         <p className="w-[5%]">{element.id}</p>
                         <img className="w-[150px] h-[150px]" src={element.ImgE}  />
                         <p className="w-[10%] underline italic">{element.Evento}</p>
@@ -62,6 +83,7 @@ export const DashboardAdminEventos = () => {
                         <p className="w-[10%]">{element.Dirección}</p>
                         <p className="w-[10%]">{element.Patrocinadores}</p>
                         <p className="w-[10%]">{element.Hora}</p>
+
                        <div className="w-[15%] flex gap-[10px] items-center">
                                 {/* Icon ver */}
                                 <span
