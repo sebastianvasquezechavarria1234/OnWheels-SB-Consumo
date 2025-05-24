@@ -5,6 +5,7 @@ import { DashboardAdminUsers } from "../feacture/dashboardAdmin/dashboardAdminPa
 import { DashboardAdminEventos } from "../feacture/dashboardAdmin/dashboardAdminPages/DashboardAdminEventos";
 import { DashboardAdminProductos } from "../feacture/dashboardAdmin/dashboardAdminPages/DashboardAdminProductos";
 import { AnimatePresence } from "framer-motion";
+import { DashboardAdminClases } from "../feacture/dashboardAdmin/dashboardAdminPages/DashboaedAdminClases";
 
 export const Routers = () => {
   return (
@@ -13,7 +14,8 @@ export const Routers = () => {
        <Route path="/" element={<Home />} />
        <Route path="/usuarios" element={<DashboardAdminUsers />} />
        <Route path="/eventos" element={<DashboardAdminEventos />} />
-       <Route path="/productos" element={<DashboardAdminProductos />} />
+       <Route path="/productos" element={<DashboardAdminProductos/>} />
+       <Route path="/clases" element={<DashboardAdminClases />} />
     </Routes>
 
    </AnimatePresence>

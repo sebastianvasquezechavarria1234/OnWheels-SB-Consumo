@@ -28,7 +28,7 @@ export const DashboardAdminEventos = () => {
 
         <div className="p-[30px]">
           {/* Encabezados */}
-          <article className="mt-[120px] flex items-center border-b border-black/20 pb-[20px] font-semibold">
+          <article className="mt-[120px]  bg-gray-100  flex items-center border-b border-black/20 pb-[20px] font-semibold">
             <p className="w-[3%]">ID</p>
             <p className="w-[30%]">Evento</p>
             <p className="w-[15%]">Lugar</p>
