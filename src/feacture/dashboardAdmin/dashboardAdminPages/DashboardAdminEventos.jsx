@@ -15,7 +15,11 @@ export const DashboardAdminEventos = () => {
             console.log('eventos', response.data);
 
             setEventos(response.data)
-        } catch (error) {
+        } catch (error) {no changes added to commit (use "git add" and/or "git commit -a")
+PS C:\Users\Sebastian\Desktop\Consumo> git add ruta/al/archivo.jsx
+>>
+fatal: pathspec 'ruta/al/archivo.jsx' did not match any files
+PS C:\Users\Sebastian\Desktop\Consumo> 
             console.error('Error al obtener Eventos:', error);
         }
     };
