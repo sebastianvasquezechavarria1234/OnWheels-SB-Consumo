@@ -31,7 +31,7 @@ export const DashboardAdminUsers = () => {
 				</h1>
 
 				<div className="p-[30px]">
-					<article className="mt-[120px]  bg-gray-100  flex items-center border-b border-black/20 pb-[20px]">
+					<article className="mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
 						<p className="w-[3%]">ID</p>
 						<p className="w-[20%]">Nombre</p>
 						<p className="w-[30%]">Correo electonico</p>

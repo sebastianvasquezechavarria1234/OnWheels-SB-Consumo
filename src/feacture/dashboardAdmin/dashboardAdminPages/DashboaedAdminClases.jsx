@@ -28,33 +28,55 @@ export const DashboardAdminClases = () => {
 
                 <div className="p-[30px]">
                     {/* Encabezados */}
-                    <article className="grid grid-cols-7 gap-4   bg-gray-100 border-b border-black/20 pb-4 font-semibold">
-                        <p className="text-center">ID</p>
-                        <p className="text-left">Nombre de la clase</p>
-                        <p className="text-left">Instructor</p>
-                        <p className="text-left">Sede</p>
-                        <p className="text-left">Horario</p>
-                        <p className="text-left">Estado</p>
-                        <p className="text-left">Acciones</p>
+                    <article className="font-semibold italic  mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
+                        <p className="w-[3%]">ID</p>
+                        <p className="w-[20%]">Nombre de la clase</p>
+                        <p className="w-[17%]">Instructor</p>
+                        <p className="w-[15%]">Sede</p>
+                        <p className="w-[20%]">Horario</p>
+                        <p className="w-[10%]">Estado</p>
+                        <p className="w-[15%]">Acciones</p>
                     </article>
 
                     {/* Lista de Clases */}
                     {Clases.map((element) => (
-                        <article key={element.id} className="grid grid-cols-7  gap-4 items-center py-4 border-b border-black/20">
-                            <p className="text-center">{element.id}</p>
-                            <p className="italic font-semibold">{element.Nombre}</p>
-                            <p>{element.Instructor}</p>
-                            <p>{element.Sede}</p>
-                            <p>{element.Horario}</p>
-                            <p className="text-green-700! bg-green-100 text-center rounded-full">{element.Estado}</p>
-                            <div className="flex gap-2 justify-start">
-                                <span className="w-[40px] h-[40px] bg-green-100 text-green-700 flex justify-center items-center rounded-[14px] border border-green-200 shadow-md hover:scale-125 transition-transform duration-300 cursor-pointer">
+                        <article key={element.id} className="py-[20px] border-b border-black/20 flex items-center">
+                            <p className="w-[3%]">{element.id}</p>
+                            <p className="w-[20%] italic font-semibold">{element.Nombre}</p>
+                            <p className="w-[17%]">{element.Instructor}</p>
+                            <p className="w-[15%]">{element.Sede}</p>
+                            <p className="w-[20%]">{element.Horario}</p>
+                            <div className="w-[10%]">
+                                <p className="inline-flex gap-[5px] px-[8px] rounded-full text-green-700! bg-green-100 rounded-full">
+                                    {element.Estado}
+                                </p>
+                            </div>
+                            <div className="w-[15%] flex gap-[10px] items-center">
+                                <span
+                                    className="w-[40px] h-[40px] bg-green-100 text-green-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-green-200 shadow-md hover:scale-[1.25] transition-transform"
+                                    style={{
+                                        transitionDuration: "450ms",
+                                        transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
+                                    }}
+                                >
                                     <Eye size={22} strokeWidth={1.3} />
                                 </span>
-                                <span className="w-[40px] h-[40px] bg-blue-100 text-blue-700 flex justify-center items-center rounded-[14px] border border-blue-200 shadow-md hover:scale-125 transition-transform duration-300 cursor-pointer">
+                                <span
+                                    className="w-[40px] h-[40px] bg-blue-100 text-blue-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-blue-200 shadow-md hover:scale-[1.25] transition-transform"
+                                    style={{
+                                        transitionDuration: "450ms",
+                                        transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
+                                    }}
+                                >
                                     <Pencil size={22} strokeWidth={1.3} />
                                 </span>
-                                <span className="w-[40px] h-[40px] bg-red-100 text-red-700 flex justify-center items-center rounded-[14px] border border-red-200 shadow-md hover:scale-125 transition-transform duration-300 cursor-pointer">
+                                <span
+                                    className="w-[40px] h-[40px] bg-red-100 text-red-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-red-200 shadow-md hover:scale-[1.25] transition-transform"
+                                    style={{
+                                        transitionDuration: "450ms",
+                                        transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
+                                    }}
+                                >
                                     <Trash2 size={22} strokeWidth={1.3} />
                                 </span>
                             </div>
