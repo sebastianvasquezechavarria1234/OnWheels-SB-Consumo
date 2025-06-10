@@ -60,6 +60,11 @@ p{
   display: none;
 }
 
+input[type="email"]:focus,
+input[type="password"]:focus{
+  border: 1px solid rgba(149, 149, 255, 0.592);
+  background-color: rgba(168, 168, 255, 0.056);
+}
 
 
 /* FONT */
