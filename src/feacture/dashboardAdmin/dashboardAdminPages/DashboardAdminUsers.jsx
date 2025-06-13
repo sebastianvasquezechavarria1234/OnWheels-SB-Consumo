@@ -11,7 +11,7 @@ export const DashboardAdminUsers = () => {
 	const getUsuarios = async () => {
 		try {
 			const response = await axios.get(
-				"https://apiautoscrud-1.onrender.com/usuarios"
+				"https://onwheels-sb-api-3.onrender.com/api/usuarios"
 			);
 			setUsuarios(response.data);
 		} catch (error) {
@@ -25,21 +25,26 @@ export const DashboardAdminUsers = () => {
 
 	return (
 		<DashboardAdminLayout>
-			<section className="relative w-[100%] bg-[var(--gray-bg-body)] side_bar">
-				<h1 className="sticky top-0 z-50 bg-[var(--gray-bg-body)] p-[30px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">
+			<section className="pr-[10px] relative w-[100%] bg-[var(--gray-bg-body)]">
+				<h1 className="sticky top-0 z-50 bg-[var(--gray-bg-body)] p-[30px] pb-[80px] shadow-[0px_20px_20px_var(--gray-bg-body)] font-secundaria">
 					Usuarios
 				</h1>
 
-				<div className="p-[30px]">
-					<article className="font-semibold italic mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
-						<p className="w-[3%]">ID</p>
-						<p className="w-[20%]">Nombre</p>
-						<p className="w-[30%]">Correo electonico</p>
-						<p className="w-[10%]">Telefono</p>
-						<p className="w-[20%]">Rol</p>
-						<p className="w-[15%]">Acciones</p>
-					</article>
+				{/* Contenedor header y list */}
+				<div className="px-[30px]">
+					{/* header tabla */}
+					<div className="sticky top-[120px] z-50">
+						<article className=" font-semibold italic mt-[120px] flex items-center border-b border-black/20 pb-[20px]">
+							<p className="w-[20%]">Nombre</p>
+							<p className="w-[30%]">Correo electonico</p>
+							<p className="w-[15%]">Telefono</p>
+							<p className="w-[20%]">Rol</p>
+							<p className="w-[15%]">Acciones</p>
+						</article>
 
+					</div>
+
+					{/* Colores aleatorios para el avatar */}
 					{usuarios.map((element) => {
 						const colores = [
 							{ fondo: "bg-red-100", texto: "text-red-700" },
@@ -54,14 +59,14 @@ export const DashboardAdminUsers = () => {
 						];
 
 						const color = colores[element.id % colores.length];
-						const inicial = element.nombre?.charAt(0).toUpperCase() || "?";
+						const inicial = element.name?.charAt(0).toUpperCase() || "?";
 
+						// Lista
 						return (
 							<article
 								key={element.id}
-								className="py-[20px] border-b border-black/20 flex items-center"
+								className="py-[30px] border-b border-black/20 flex items-center"
 							>
-								<p className="w-[3%]">{element.id}</p>
 								<div className="w-[20%] flex gap-[15px] items-center">
 									{/* Avatar */}
 									<span className={`relative w-[55px] h-[55px] ${color.fondo} ${color.texto} rounded-full flex justify-center items-center font-secundaria text-[2rem]`}>
@@ -70,31 +75,33 @@ export const DashboardAdminUsers = () => {
 										</h5>
 									</span>
 									<div className="flex flex-col">
-										<p className="font-bold text-black/80 italic">{element.nombre}</p>
-										<p>{element.apellidos}</p>
+										<p className="font-bold text-black/80 italic">{element.name}</p>
+										<p>{element.lastName}</p>
 									</div>
 								</div>
 								<p className="w-[30%] underline italic ">{element.email}</p>
-								<p className="w-[10%]">{element.telefono}</p>
+								<p className="w-[15%]">{element.phone}</p>
 								<div className="w-[20%]">
 									<p
-										className={`inline-flex gap-[5px] px-[8px] rounded-full ${element.rol === "Administrador"
+										className={`inline-flex items-center gap-[5px] px-[15px] py-[7px] rounded-full ${element.role === "Administrador"
 												? "text-purple-700! bg-purple-100"
-												: element.rol === "Usuario"
+												: element.role === "Usuario"
 												? "text-green-700! bg-green-100"
-												: element.rol === "Estudiante"
+												: element.role === "Estudiante"
 												? "text-yellow-700! bg-yellow-100"
-												: element.rol === "Instructor"
+												: element.role === "Instructor"
 												? "text-red-700! bg-red-100"
-												: "text-gray-700! bg-gray-100"
+												: "text-gray-700! bg-gray-200"
 											}`}
 									>
-										{element.rol}
+										<span className="w-[10px] h-[10px] block bg-[currentColor] rounded-full"></span>
+										{element.role}
 									</p>
 								</div>
+								{/* Acciones icons */}
 								<div className="w-[15%] flex gap-[10px] items-center">
 									<span
-										className="w-[40px] h-[40px] bg-green-100 text-green-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-green-200 shadow-md hover:scale-[1.25] transition-transform"
+										className="w-[45px] h-[45px] bg-green-100 text-green-700 flex justify-center items-center rounded-[18px] cursor-pointer border border-green-200 shadow-md hover:scale-[1.25] transition-transform"
 										style={{
 											transitionDuration: "450ms",
 											transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
@@ -103,7 +110,7 @@ export const DashboardAdminUsers = () => {
 										<Eye size={22} strokeWidth={1.3} />
 									</span>
 									<span
-										className="w-[40px] h-[40px] bg-blue-100 text-blue-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-blue-200 shadow-md hover:scale-[1.25] transition-transform"
+										className="w-[45px] h-[45px] bg-blue-100 text-blue-700 flex justify-center items-center rounded-[18px] cursor-pointer border border-blue-200 shadow-md hover:scale-[1.25] transition-transform"
 										style={{
 											transitionDuration: "450ms",
 											transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
@@ -112,7 +119,7 @@ export const DashboardAdminUsers = () => {
 										<Pencil size={22} strokeWidth={1.3} />
 									</span>
 									<span
-										className="w-[40px] h-[40px] bg-red-100 text-red-700 flex justify-center items-center rounded-[14px] cursor-pointer border border-red-200 shadow-md hover:scale-[1.25] transition-transform"
+										className="w-[45px] h-[45px] bg-red-100 text-red-700 flex justify-center items-center rounded-[18px] cursor-pointer border border-red-200 shadow-md hover:scale-[1.25] transition-transform"
 										style={{
 											transitionDuration: "450ms",
 											transitionTimingFunction: "cubic-bezier(0.3, 1.8, 0.4, 1)",
