@@ -79,4 +79,5 @@ export const DashboardAdminEventos = () => {
 			</section>
 		</DashboardAdminLayout>
 	);
+
 };
